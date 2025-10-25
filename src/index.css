@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #011f4b;
+    --bg-primary: white;
+  }
+  .dark {
+    --primary: red;
+    --bg-primary: black;
+  }
+}
+@layer utilities {
+  .t {
+    color: var(--primary);
+  }
+  .bg {
+    background-color: var(--bg-primary);
+  }
+}
