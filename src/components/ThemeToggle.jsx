@@ -13,7 +13,7 @@ const ThemeToggle = () => {
   }
   return (
     <div
-      className="fixed to-5% right-5 cursor-pointer z-50 p-5"
+      className="fixed to-10% right-5 cursor-pointer z-50 m-5 hidden md:block "
       onClick={handleToggle}
     >
       {darkMode ? (
