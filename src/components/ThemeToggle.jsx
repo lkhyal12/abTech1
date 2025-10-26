@@ -4,12 +4,19 @@ import { use } from "react";
 
 const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useState(localStorage.getItem("darkMode"));
-  useEffect(() => {
-    setDarkMode(true);
-  }, []);
 
+  useEffect(() => {
+    if (darkMode) document.documentElement.classList.add("dark");
+  }, []);
   function handleToggle() {
     document.documentElement.classList.toggle("dark");
+    if (darkMode) {
+      localStorage.removeItem("darkMode");
+      setDarkMode(false);
+    } else {
+      localStorage.setItem("darkMode", "true");
+      setDarkMode(true);
+    }
   }
   return (
     <div

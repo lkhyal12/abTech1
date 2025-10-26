@@ -1,7 +1,11 @@
-import { Menu, Moon } from "lucide-react";
-import React from "react";
+import { Menu, Moon, X } from "lucide-react";
+import React, { useState } from "react";
 
 const NavBar = () => {
+  const [showLinksMenu, setShowLinksMenu] = useState(false);
+  function handleCloseMenu() {
+    setShowLinksMenu(false);
+  }
   return (
     <header className="px-5 sm:px-10 md:px-20 py-5">
       <nav className="fixed top-0 left-0 px-5 sm:px-10 md:px-15 lg:px-20 py-5  w-full z-40 flex justify-between items-center">
@@ -27,10 +31,64 @@ const NavBar = () => {
           </a>
         </div>
       </nav>
-      <div className="block md:hidden absolute to-5% right-5 cursor-pointer">
+      <div className="block md:hidden fixed to-5% right-5 cursor-pointer z-50">
         {" "}
-        <Menu className="text-primary" />
+        <Menu
+          className="text-primary cursor-pointer"
+          onClick={() => setShowLinksMenu(true)}
+        />
       </div>
+
+      {/* links menu */}
+      {showLinksMenu && (
+        <div className="mobileLinks fixed inset-0 z-50  bg-black/90">
+          <div className="fixed top-10% pt-10 right-10  w-fit">
+            <X
+              color="white"
+              className="cursor-pointer"
+              size={30}
+              onClick={handleCloseMenu}
+            />
+          </div>
+          <div className="  flex flex-col items-center justify-center gap-10 h-full w-full">
+            <a
+              href="#home"
+              className="font-bold text-white"
+              onClick={() => setShowLinksMenu(false)}
+            >
+              Home
+            </a>
+            <a
+              href="#about"
+              className="font-bold text-white"
+              onClick={() => setShowLinksMenu(false)}
+            >
+              About
+            </a>
+            <a
+              href="#skills"
+              className="font-bold text-white"
+              onClick={() => setShowLinksMenu(false)}
+            >
+              Skills
+            </a>
+            <a
+              href="#projects"
+              className="font-bold text-white"
+              onClick={() => setShowLinksMenu(false)}
+            >
+              Projects
+            </a>
+            <a
+              href="#contact"
+              className="font-bold text-white"
+              onClick={() => setShowLinksMenu(false)}
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
