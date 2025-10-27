@@ -27,6 +27,9 @@
     --section-padding: 100px;
     --acent-text: #9ca3af;
   }
+  html {
+    @apply scroll-smooth;
+  }
   body {
     background-color: var(--bg-primary);
   }

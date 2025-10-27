@@ -5,6 +5,7 @@ import ThemeToggle from "./components/ThemeToggle";
 import Hero from "./sections/Hero";
 import StarsBackground from "./components/StarsBackground";
 import About from "./sections/About";
+import Skills from "./sections/Skills";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <main>
         <Hero />
         <About />
+        <Skills />
       </main>
     </>
   );
