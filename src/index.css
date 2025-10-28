@@ -73,6 +73,9 @@
   .bgCard {
     background: var(--card-color);
   }
+  .borderColor {
+    border: 1px solid var(--border-color);
+  }
   /* .paddinSection {
     padding: var(--padding-section);
     background-color: red;

@@ -8,7 +8,7 @@ const NavBar = () => {
   }
   return (
     <header className="px-5 sm:px-10 md:px-20 py-5">
-      <nav className="fixed top-0 left-0 px-5 sm:px-10 md:px-15 lg:px-20 py-5  w-full z-40 flex justify-between items-center">
+      <nav className="fixed top-0 left-0 px-5 sm:px-10 md:px-15 lg:px-20 py-5  w-full z-50 flex justify-between items-center">
         <a className="text-primary text-2xl font-bold" href="#home">
           AbTech<span className="text-secondary">Protfolio</span>
         </a>
@@ -41,7 +41,7 @@ const NavBar = () => {
 
       {/* links menu */}
       {showLinksMenu && (
-        <div className="mobileLinks fixed inset-0 z-50  bg-black/90">
+        <div className="mobileLinks fixed inset-0 z-90  bg-black/90">
           <div className="fixed top-10% pt-10 right-10  w-fit">
             <X
               color="white"
