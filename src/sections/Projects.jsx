@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import moviesAppImg from "../assets/images/moviesApp.PNG";
+import nikePageImg from "../assets/images/nikeCapture.PNG";
 import { ExternalLink, Github } from "lucide-react";
 const projects = [
   {
@@ -17,7 +18,7 @@ const projects = [
     title: "Nike Landing Page",
     description:
       "A beautiful lading page of nike shoes i created using reactjs and tailwindcss",
-    image: moviesAppImg,
+    image: nikePageImg,
     tags: ["React", "TailwindCSS"],
     demoUrl: "https://tmdbtrailers.vercel.app/",
     githubUrl: "https://github.com/lkhyal12/tmdbtrailers",

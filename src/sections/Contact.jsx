@@ -17,7 +17,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative z-10 min-h-screen flex flex-col items-center pt-25 pb-5 px-4 sm:px-5 md:px-10 lg:px-30 xl:px-40"
+      className="relative z-10 min-h-screen flex flex-col items-center pt-25 pb-15 px-4 sm:px-5 md:px-10 lg:px-30 xl:px-40"
     >
       <h1 className="sectionTitle text-secondary">
         Get In <span className="text-primary">Touch</span>

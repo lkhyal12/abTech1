@@ -76,6 +76,11 @@
   .borderColor {
     border: 1px solid var(--border-color);
   }
+  .active {
+    text-decoration: underline;
+
+    text-underline-offset: 4px;
+  }
   /* .paddinSection {
     padding: var(--padding-section);
     background-color: red;

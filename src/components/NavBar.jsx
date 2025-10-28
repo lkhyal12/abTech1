@@ -1,11 +1,37 @@
 import { Menu, Moon, X } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const NavBar = () => {
   const [showLinksMenu, setShowLinksMenu] = useState(false);
+  const [currentSectionId, setCurrentSectionId] = useState("home");
   function handleCloseMenu() {
     setShowLinksMenu(false);
   }
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setCurrentSectionId(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
+  }, []);
   return (
     <header className="px-5 sm:px-10 md:px-20 py-5">
       <nav className="fixed top-0 left-0 px-5 sm:px-10 md:px-15 lg:px-20 py-5  w-full z-50 flex justify-between items-center">
@@ -14,19 +40,44 @@ const NavBar = () => {
         </a>
 
         <div className="hidden md:flex gap-10 pr-15">
-          <a href="#home" className="link text-primary">
+          <a
+            href="#home"
+            className={`link text-primary ${
+              currentSectionId == "home" ? "active" : ""
+            }`}
+          >
             Home
           </a>
-          <a href="#about" className="link text-primary">
+          <a
+            href="#about"
+            className={`link text-primary ${
+              currentSectionId == "about" ? "active" : ""
+            }`}
+          >
             About
           </a>
-          <a href="#skills" className="link text-primary">
+          <a
+            href="#skills"
+            className={`link text-primary ${
+              currentSectionId == "skills" ? "active" : ""
+            }`}
+          >
             Skills
           </a>
-          <a href="#projects" className="link text-primary">
+          <a
+            href="#projects"
+            className={`link text-primary ${
+              currentSectionId == "projects" ? "active" : ""
+            }`}
+          >
             Projects
           </a>
-          <a href="#contact" className="link text-primary">
+          <a
+            href="#contact"
+            className={`link text-primary ${
+              currentSectionId == "contact" ? "active" : ""
+            }`}
+          >
             Contact
           </a>
         </div>
@@ -41,7 +92,7 @@ const NavBar = () => {
 
       {/* links menu */}
       {showLinksMenu && (
-        <div className="mobileLinks fixed inset-0 z-90  bg-black/90">
+        <div className="mobileLinks fixed inset-0 z-50  bg-black/90">
           <div className="fixed top-10% pt-10 right-10  w-fit">
             <X
               color="white"

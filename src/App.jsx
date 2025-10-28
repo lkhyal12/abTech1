@@ -9,6 +9,7 @@ import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
 import ImageLayOut from "./components/ImageLayOut";
 import Contact from "./sections/Contact";
+import Footer from "./sections/Footer";
 
 const App = () => {
   const [layoutImg, setLayoutImg] = useState(null);
@@ -24,6 +25,7 @@ const App = () => {
         <Skills />
         <Projects setLayoutImg={setLayoutImg} />
         <Contact />
+        <Footer />
       </main>
     </>
   );

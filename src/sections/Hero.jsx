@@ -14,9 +14,12 @@ const Hero = () => {
         Front-end developer crafting fast, accessible, and pixel-perfect web
         experiences using React, Tailwind, and modern JavaScript.
       </p>
-      <button className="btnBg hover:opacity-90 py-2 px-6 rounded-full cursor-pointer hover:shadow-3xl font-medium">
+      <a
+        href="#projects"
+        className="btnBg hover:opacity-90 py-2 px-6 rounded-full cursor-pointer hover:shadow-3xl font-medium"
+      >
         View My Work
-      </button>
+      </a>
 
       <div className="scrollDown bounce absolute bottom-20 left-50% transform flex flex-col gap-2 items-center justify-center max-sm:bottom-10">
         <ArrowDown className="text-primary" size={18} />
