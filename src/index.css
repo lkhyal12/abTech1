@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  /* :root {
     --primary-color: #111111;
     --bg-primary: white;
     --card-color: #f5f5f5;
@@ -26,7 +26,34 @@
     --hover: #8f8f8f;
     --section-padding: 100px;
     --acent-text: #9ca3af;
+  } */
+  :root {
+    /* Light mode */
+    --primary-color: #0a2540; /* Deep sky blue for text/headings */
+    --bg-primary: #ffffff; /* White background */
+    --card-color: #f0f8ff; /* Very light blue tint (like sky reflection) */
+    --border-color: #dbeafe; /* Soft blue-gray border */
+    --secondary-color: #2563eb; /* Vibrant blue for highlights */
+    --opposite-color: #ffffff; /* Used on buttons with blue background */
+    --hover: #1e40af; /* Darker blue hover effect */
+    --section-padding: 100px;
+    --accent-text: #64748b; /* Muted slate-blue text */
   }
+
+  .dark {
+    /* Dark mode */
+    --primary-color: #e0f2ff; /* Light icy blue text */
+    --bg-primary: #020617; /* Very dark blue-black background */
+    --card-color: #0f172a; /* Slightly lighter section for cards */
+    --border-color: #1e293b; /* Deep gray-blue border */
+    --secondary-color: #3b82f6; /* Blue accent for buttons/links */
+    --opposite-color: #0a0a0a; /* Used for text on light areas */
+    --secondary-text: #94a3b8; /* Muted gray-blue text */
+    --hover: #60a5fa; /* Lighter blue hover glow */
+    --section-padding: 100px;
+    --accent-text: #9ca3af;
+  }
+
   html {
     @apply scroll-smooth;
   }
