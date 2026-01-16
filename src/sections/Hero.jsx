@@ -1,10 +1,10 @@
 import { ArrowDown } from "lucide-react";
 import React, { useEffect, useState } from "react";
 const words = [
-  "Bammi Abdelali",
+  "Baami Abdelali",
   "A Frontend Developer",
   "A React Enthusiast",
-  "UI Designer",
+  "A UI Designer",
 ];
 const Hero = () => {
   const [currentWord, setCurrentWord] = useState("");

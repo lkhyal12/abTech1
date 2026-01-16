@@ -1,4 +1,7 @@
+import { useGSAP } from "@gsap/react";
 import React, { useEffect, useRef, useState } from "react";
+import gsap, { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 const skills = [
   // frontEnd
   { skill: "HTML/CSS", level: 70, category: "frontend" },
@@ -6,6 +9,7 @@ const skills = [
   { skill: "React Js", level: 65, category: "frontend" },
   { skill: "NextJs", level: 50, category: "frontend" },
   { skill: "TypeScript", level: 50, category: "frontend" },
+  { skill: "NodeJs", level: 20, category: "backend" },
 
   // algorithms
   // { skill: "Algorithms", level: 60, category: "alogithms" },
@@ -18,7 +22,7 @@ const Skills = () => {
   const [isThisSectionVisible, setIsThisSectionVisible] = useState(false);
 
   const skillsCategoryArr = skills.filter(
-    (s) => currentCategory === "all" || currentCategory === s.category
+    (s) => currentCategory === "all" || currentCategory === s.category,
   );
   const skillsSectionRef = useRef();
   useEffect(() => {
@@ -26,7 +30,7 @@ const Skills = () => {
       (entries) => {
         if (entries[0].isIntersecting) setIsThisSectionVisible(true);
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     if (skillsSectionRef.current) observer.observe(skillsSectionRef.current);
@@ -35,6 +39,23 @@ const Skills = () => {
         observer.unobserve(skillsSectionRef.current);
     };
   }, []);
+
+  useGSAP(
+    () => {
+      gsap.from(".sectionTitle span", {
+        yPercent: 100,
+        opacity: 0,
+        ease: "elastic",
+        duration: 0.6,
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: skillsSectionRef.current,
+          start: "top 60%",
+        },
+      });
+    },
+    { scope: skillsSectionRef, dependencies: [] },
+  );
   return (
     <section
       ref={skillsSectionRef}
@@ -42,7 +63,8 @@ const Skills = () => {
       className="relative z-10 min-h-screen flex flex-col items-center pt-25 pb-5 px-4 sm:px-5 md:px-10 lg:px-30 xl:px-40"
     >
       <h1 className="sectionTitle text-secondary">
-        My <span className="text-primary">Skills</span>
+        <span className="inline-block">My</span>{" "}
+        <span className="inline-block text-primary">Skills</span>
       </h1>
 
       <div className="skillsSectionLinks flex justify-center items-center flex-wrap gap-5 mt-10">

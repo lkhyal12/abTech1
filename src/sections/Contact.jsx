@@ -1,3 +1,5 @@
+import { useGSAP } from "@gsap/react";
+import gsap, { ScrollTrigger } from "gsap/all";
 import {
   Facebook,
   Instagram,
@@ -11,16 +13,56 @@ import {
   Pin,
   Twitter,
 } from "lucide-react";
-import React from "react";
-
+import React, { useRef } from "react";
+gsap.registerPlugin(ScrollTrigger);
 const Contact = () => {
+  const contactRef = useRef();
+  useGSAP(
+    () => {
+      gsap.from(".sectionTitle span", {
+        yPercent: 100,
+        opacity: 0,
+        ease: "elastic",
+        duration: 0.6,
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: contactRef.current,
+          start: "top 60%",
+        },
+      });
+
+      gsap.from(".leftSide", {
+        xPercent: -100,
+        opacity: 0,
+        ease: "power1.inOut",
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: ".contentContainer",
+          start: "top 60%",
+        },
+      });
+
+      gsap.from(".rightSide", {
+        xPercent: 100,
+        opacity: 0,
+        ease: "power1.inOut",
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: ".contentContainer",
+          start: "top 60%",
+        },
+      });
+    },
+    { scope: contactRef, dependencies: [] },
+  );
   return (
     <section
+      ref={contactRef}
       id="contact"
       className="relative z-10 min-h-screen flex flex-col items-center pt-25 pb-15 px-4 sm:px-5 md:px-10 lg:px-30 xl:px-40"
     >
       <h1 className="sectionTitle text-secondary">
-        Get In <span className="text-primary">Touch</span>
+        <span>Get In</span> <span className="text-primary">Touch</span>
       </h1>
 
       <p className="text-center w-full md:w-2/3 my-5 text-primary font-medium">
@@ -28,8 +70,8 @@ const Contact = () => {
         free to reach out. I'm always open to discussing new opportunities.
       </p>
 
-      <div className="flex flex-col md:flex-row gap-6 items-center mt-10 w-full">
-        <div className="flex-1 max-md:w-full">
+      <div className="contentContainer flex flex-col md:flex-row gap-6 items-center mt-10 w-full">
+        <div className="leftSide flex-1 max-md:w-full">
           <h3 className="text-primary font-semibold text-xl sm:text-2xl text-center">
             Contact Information
           </h3>
@@ -76,7 +118,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="flex-1 max-md:w-full px-5 py-6 bgCard shadow-sm rounded-md">
+        <div className="rightSide flex-1 max-md:w-full px-5 py-6 bgCard shadow-sm rounded-md">
           <h3 className="text-primary font-semibold text-xl sm:text-2xl text-center mb-5">
             Send a message
           </h3>

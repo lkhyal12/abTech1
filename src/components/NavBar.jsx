@@ -1,3 +1,5 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap/all";
 import { Menu, Moon, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
@@ -19,7 +21,7 @@ const NavBar = () => {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     sections.forEach((section) => {
@@ -32,14 +34,32 @@ const NavBar = () => {
       });
     };
   }, []);
+
+  useGSAP(() => {
+    gsap.from(".linksContainer a", {
+      yPercent: 100,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.2,
+      ease: "elastic",
+    });
+
+    gsap.from(".logo", {
+      yPercent: -100,
+      opacity: 0,
+      duration: 1,
+
+      ease: "elastic",
+    });
+  }, []);
   return (
     <header className="px-5 sm:px-10 md:px-20 py-5">
       <nav className="fixed top-0 left-0 px-5 sm:px-10 md:px-15 lg:px-20 py-5  w-full z-50 flex justify-between items-center">
-        <a className="text-primary text-2xl font-bold" href="#home">
+        <a className="logo text-primary text-2xl font-bold" href="#home">
           AbTech<span className="text-secondary">Protfolio</span>
         </a>
 
-        <div className="hidden md:flex gap-10 pr-15">
+        <div className="linksContainer hidden md:flex gap-10 pr-15">
           <a
             href="#home"
             className={`link text-primary ${
@@ -92,7 +112,7 @@ const NavBar = () => {
 
       {/* links menu */}
       {showLinksMenu && (
-        <div className="mobileLinks fixed inset-0 z-50  bg-black/90">
+        <div className="mobileLinks fixed inset-0 z-50  bg-black">
           <div className="fixed top-10% pt-10 right-10  w-fit">
             <X
               color="white"
