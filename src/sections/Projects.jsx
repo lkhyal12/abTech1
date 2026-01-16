@@ -44,7 +44,7 @@ const projects = [
     description:
       "A game landing page i created using reactjs tailwindcss and gsap for animation ",
     image: zentryImg,
-    tags: ["React", "TailwindCSS", "gsap"],
+    tags: ["React", "TailwindCSS", "Gsap"],
     demoUrl: "https://zntery-game.vercel.app/",
     githubUrl: "https://github.com/lkhyal12/znteryGame",
   },
@@ -54,7 +54,7 @@ const projects = [
     description:
       "A cocktail landing page i created using reactjs tailwindcss and gsap for animation ",
     image: velvetImg,
-    tags: ["React", "TailwindCSS", "gsap"],
+    tags: ["React", "TailwindCSS", "Gsap"],
     demoUrl: "https://velvet-rose-chi.vercel.app/",
     githubUrl: "https://github.com/lkhyal12/cocktails-page",
   },
