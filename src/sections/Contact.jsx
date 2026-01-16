@@ -62,7 +62,8 @@ const Contact = () => {
       className="relative z-10 min-h-screen flex flex-col items-center pt-25 pb-15 px-4 sm:px-5 md:px-10 lg:px-30 xl:px-40"
     >
       <h1 className="sectionTitle text-secondary">
-        <span>Get In</span> <span className="text-primary">Touch</span>
+        <span className="inline-block">Get In</span>{" "}
+        <span className="text-primary inline-block">Touch</span>
       </h1>
 
       <p className="text-center w-full md:w-2/3 my-5 text-primary font-medium">
