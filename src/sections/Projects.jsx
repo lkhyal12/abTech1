@@ -3,6 +3,7 @@ import moviesAppImg from "../assets/images/moviesApp.PNG";
 import nikePageImg from "../assets/images/nikeCapture.PNG";
 import spotifyImg from "../assets/images/spotify.PNG";
 import zentryImg from "../assets/images/zentry1.PNG";
+import velvetImg from "../assets/images/cocktail.PNG";
 import { ExternalLink, Github } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import gsap, { ScrollTrigger } from "gsap/all";
@@ -41,11 +42,21 @@ const projects = [
     id: 4,
     title: "A Game Landing Page",
     description:
-      "A game landing page i create using reactjs tailwindcss and gsap for animation ",
+      "A game landing page i created using reactjs tailwindcss and gsap for animation ",
     image: zentryImg,
     tags: ["React", "TailwindCSS", "gsap"],
     demoUrl: "https://zntery-game.vercel.app/",
     githubUrl: "https://github.com/lkhyal12/znteryGame",
+  },
+  {
+    id: 5,
+    title: "A Cocktail  Landing Page",
+    description:
+      "A cocktail landing page i created using reactjs tailwindcss and gsap for animation ",
+    image: velvetImg,
+    tags: ["React", "TailwindCSS", "gsap"],
+    demoUrl: "https://velvet-rose-chi.vercel.app/",
+    githubUrl: "https://github.com/lkhyal12/cocktails-page",
   },
 ];
 const Projects = ({ setLayoutImg }) => {
