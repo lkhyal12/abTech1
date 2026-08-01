@@ -27,7 +27,9 @@ const About = () => {
         duration: 0.5,
         scrollTrigger: {
           trigger: ".contentContainer",
-          start: "top 60%",
+          start: "top bottom",
+          end: "bottom 50%",
+          scrub: true,
         },
       });
 
@@ -38,7 +40,9 @@ const About = () => {
         duration: 0.5,
         scrollTrigger: {
           trigger: ".contentContainer",
-          start: "top 60%",
+          start: "top 100%",
+          end: "bottom bottom",
+          scrub: true,
         },
       });
     },
@@ -48,7 +52,7 @@ const About = () => {
     <section
       ref={aboutRef}
       id="about"
-      className=" relative z-10 min-h-screen flex flex-col justify-center items-center px-4 pt-20 sm:px-5 md:px-10 lg:px-30 xl:px-40
+      className=" relative z-10 min-h-screen flex flex-col justify-center items-center px-4 pt-20 overflow-x-hideen sm:px-5 md:px-10 lg:px-30 xl:px-40
       "
     >
       <h1 className="sectionTitle text-secondary">

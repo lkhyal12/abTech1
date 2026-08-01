@@ -19,7 +19,7 @@ const App = () => {
       <NavBar />
       <ImageLayOut setLayoutImg={setLayoutImg} layoutImg={layoutImg} />
       <StarsBackground />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero />
         <About />
         <Skills />

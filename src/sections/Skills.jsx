@@ -7,9 +7,13 @@ const skills = [
   { skill: "HTML/CSS", level: 70, category: "frontend" },
   { skill: "Javascript", level: 75, category: "frontend" },
   { skill: "React Js", level: 65, category: "frontend" },
+  { skill: "GSAP", level: 70, category: "frontend" },
   { skill: "NextJs", level: 50, category: "frontend" },
   { skill: "TypeScript", level: 50, category: "frontend" },
-  { skill: "NodeJs", level: 20, category: "backend" },
+  { skill: "NodeJs", level: 50, category: "backend" },
+  { skill: "ExpressJs", level: 50, category: "backend" },
+  { skill: "Mongoose", level: 40, category: "backend" },
+  { skill: "MongoDB", level: 40, category: "backend" },
 
   // algorithms
   // { skill: "Algorithms", level: 60, category: "alogithms" },

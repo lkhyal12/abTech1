@@ -4,11 +4,23 @@ import nikePageImg from "../assets/images/nikeCapture.PNG";
 import spotifyImg from "../assets/images/spotify.PNG";
 import zentryImg from "../assets/images/zentry1.PNG";
 import velvetImg from "../assets/images/cocktail.PNG";
+import selloutImg from "../assets/images/sellout.PNG";
 import { ExternalLink, Github } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import gsap, { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 const projects = [
+  {
+    id: 1,
+    title: "SellOut – Modern MERN E-Commerce",
+    description:
+      "A production-ready MERN e-commerce platform featuring JWT authentication, Stripe payments, admin management, and a responsive shopping experience.",
+    image: selloutImg,
+    tags: ["MERN STACK", "Stripe", "JWT"],
+    demoUrl: "https://sellout-orcin.vercel.app/",
+    githubUrl: "https://github.com/lkhyal12/sellout",
+  },
+
   {
     id: 1,
     title: "Movies Web Application",
@@ -116,7 +128,7 @@ const Projects = ({ setLayoutImg }) => {
               src={p.image}
               alt={p.title}
               onClick={() => handleChangeImg(p.image)}
-              className="w-full rounded-[10px] cursor-pointer"
+              className="w-full aspect-video object-cover rounded-[10px] cursor-pointer"
             />
 
             <div className="p-4">
@@ -130,7 +142,7 @@ const Projects = ({ setLayoutImg }) => {
               <h3 className="text-lg text-primary sm:text-xl font-medium  my-4">
                 {p.title}
               </h3>
-              <p className="text-accent">{p.description}</p>
+              <p className="text-accent text-xs">{p.description}</p>
             </div>
 
             <div className="flex items-center gap-3 py-5 px-2">

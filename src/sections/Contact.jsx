@@ -38,7 +38,9 @@ const Contact = () => {
         duration: 0.5,
         scrollTrigger: {
           trigger: ".contentContainer",
-          start: "top 60%",
+          start: "top 100%",
+          end: "bottom bottom",
+          scrub: true,
         },
       });
 
@@ -49,7 +51,9 @@ const Contact = () => {
         duration: 0.5,
         scrollTrigger: {
           trigger: ".contentContainer",
-          start: "top 60%",
+          start: "top 100%",
+          end: "bottom bottom",
+          scrub: true,
         },
       });
     },

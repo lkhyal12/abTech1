@@ -2,7 +2,7 @@ import { ArrowDown } from "lucide-react";
 import React, { useEffect, useState } from "react";
 const words = [
   "Baami Abdelali",
-  "A Frontend Developer",
+  "A Full Stack Developer",
   "A React Enthusiast",
   "A UI Designer",
 ];
@@ -15,7 +15,6 @@ const Hero = () => {
     let word = words[idx];
     let isDeleting = false;
     let text = "";
-    let wordIdx = 0;
     let timer;
     function type() {
       if (isDeleting) {
