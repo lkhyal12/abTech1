@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react";
-import moviesAppImg from "../assets/images/moviesApp.PNG";
-import nikePageImg from "../assets/images/nikeCapture.PNG";
-import spotifyImg from "../assets/images/spotify.PNG";
-import zentryImg from "../assets/images/zentry1.PNG";
-import velvetImg from "../assets/images/cocktail.PNG";
-import selloutImg from "../assets/images/sellout.PNG";
+import moviesAppImg from "../assets/images/moviesApp.png";
+import nikePageImg from "../assets/images/nikeCapture.png";
+import spotifyImg from "../assets/images/spotify.png";
+import zentryImg from "../assets/images/zentry1.png";
+import velvetImg from "../assets/images/cocktail.png";
+import selloutImg from "../assets/images/sellout.png";
 import { ExternalLink, Github } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import gsap, { ScrollTrigger } from "gsap/all";
